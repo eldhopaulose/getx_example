@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
 
+// new comment
 void main() {
   runApp(
     GetMaterialApp(
