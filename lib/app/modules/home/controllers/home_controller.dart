@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
+import 'package:getx_example/app/networks/dio/repo/auth_repo.dart';
+import 'package:getx_example/app/networks/models/home_details_model.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
-
-  final count = 0.obs;
 
   @override
   void onInit() {
@@ -20,5 +20,10 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  Future<HomeDetailsModel?> fetchData() async {
+    final AuthRepo authRepo = AuthRepo();
+    final response = await authRepo.homeResponse();
+
+    return response;
+  }
 }
